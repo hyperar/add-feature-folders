@@ -1,11 +1,27 @@
 version: 1.0.{build}
+
 skip_non_tags: false
+
+install:
+- ps: |
+    if (Test-Path "$env:ProgramFiles\dotnet\sdk\6.0.132") {
+        Write-Host ".NET Core SDK 6.0.132 is already installed" -ForegroundColor Yellow
+    }
+    else {
+        Write-Host "Installing .NET Core SDK 6.0.132"
+        Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:temp\dotnet-install.ps1"
+        & $env:temp\dotnet-install.ps1 -Architecture x64 -Version 6.0.132 -InstallDir "$env:ProgramFiles\dotnet"
+    }
+
 build_script:
 - ps: .\build.ps1
+
 test: off
+
 branches:
   only: 
   - master
+
 artifacts:
 - path: .\artifacts\**\*.nupkg
   name: NuGet
