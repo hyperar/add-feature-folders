@@ -1,0 +1,11 @@
+version: 1.0.{build}
+skip_non_tags: false
+build_script:
+- ps: .\build.ps1
+test: off
+branches:
+  only: 
+  - master
+artifacts:
+- path: .\artifacts\**\*.nupkg
+  name: NuGet
