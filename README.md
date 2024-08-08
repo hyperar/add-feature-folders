@@ -3,7 +3,7 @@
 
 ### Installation
 ```
-    Install-Package OdeToCode.AddFeatureFolders 
+    Install-Package Hyperar.AddFeatureFolders 
 ```
 
 ### Usage 
@@ -55,8 +55,6 @@ If you encounter problems with MVC locating the views, check your controller nam
 #### Disclaimer
 
 Your feature folder name (`FeatureFolderOptions.FeatureFolderName` or `AreaFeatureFolderOptions.AreaFolderName` if using Areas) cannot be in your project namespace.
-
-See: [Issue #27](https://github.com/OdeToCode/AddFeatureFolders/issues/27)
 
 ### Using areas
 
