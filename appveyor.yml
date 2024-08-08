@@ -33,11 +33,10 @@ build:
   verbosity: minimal
 deploy:
 - provider: NuGet
-  server: https://www.nuget.org/packages/Hyperar.AddFeatureFolders/
   api_key:
     secure: VFY/shzz3MLUjgflxMIW6ewr1dXzfQqpMNuX0gv0YlMvJ7f1Pp7L/5/Lb4hf89lw
   username:
-    secure: 2/eIlgBkedapy+Jt4YKUUQ==
+    secure: q4vujygQ31L007TjVI+MBg==
   skip_symbols: true
   on:
     branch: master
