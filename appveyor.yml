@@ -4,13 +4,6 @@ branches:
   - master
 image: Visual Studio 2022
 configuration: Release
-platform: Any CPU
-assembly_info:
-  patch: true
-  file: '**\AssemblyInfo.*'
-  assembly_version: '{version}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -37,8 +30,7 @@ before_build:
 build:
   publish_nuget: true
   publish_nuget_symbols: true
-  use_snupkg_format: true
-  verbosity: detailed
+  verbosity: minimal
 deploy:
 - provider: NuGet
   server: https://www.nuget.org/packages/Hyperar.AddFeatureFolders/
