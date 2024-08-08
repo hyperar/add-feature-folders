@@ -13,8 +13,14 @@ install:
         & $env:temp\dotnet-install.ps1 -Architecture x64 -Version 6.0.132 -InstallDir "$env:ProgramFiles\dotnet"
     }
 
-build_script:
-- ps: .\build.ps1
+dotnet_csproj:
+  patch: true
+  file: '.\src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 
 test: false
 
