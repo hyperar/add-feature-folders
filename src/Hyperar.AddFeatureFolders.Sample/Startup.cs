@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using OdeToCode.AddFeatureFolders;
 
 namespace WebApplication
 {
@@ -14,7 +13,7 @@ namespace WebApplication
                     .AddFeatureFolders()
                     .AddAreaFeatureFolders();
 
-            // "Features" is the default feature folder root. To override, pass along 
+            // "Features" is the default feature folder root. To override, pass along
             // a new FeatureFolderOptions object with a different FeatureFolderName
         }
 
@@ -22,8 +21,9 @@ namespace WebApplication
         {
             app.UseDeveloperExceptionPage();
             app.UseRouting();
-            app.UseEndpoints(e => {
-                e.MapControllerRoute(name:"areaRoute", pattern:"{area:exists}/{controller=Home}/{action=Index}/{id?}");
+            app.UseEndpoints(e =>
+            {
+                e.MapControllerRoute(name: "areaRoute", pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

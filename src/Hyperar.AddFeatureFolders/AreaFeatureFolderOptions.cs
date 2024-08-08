@@ -1,4 +1,4 @@
-﻿namespace OdeToCode.AddFeatureFolders
+﻿namespace Hyperar.AddFeatureFolders
 {
     public class AreaFeatureFolderOptions
     {
@@ -8,7 +8,7 @@
         public AreaFeatureFolderOptions() : this(new FeatureFolderOptions())
         {
         }
-        
+
         /// <summary>
         /// Options to control the area feature folders
         /// </summary>
@@ -24,10 +24,10 @@
         /// The name of the root area folder on disk (default: 'Areas')
         /// </summary>
         public string AreaFolderName { get; set; }
-        
+
         /// <summary>
         /// The default view location for areas. Helps intellisense find razor views. Example:
-        ///     "\Areas\{2}\{Feature}\{0}.cshtml". 
+        ///     "\Areas\{2}\{Feature}\{0}.cshtml".
         /// Razor replaces the area name into {2} placeholder, the controller name into {1} placeholder & view name into the {0} placeholder.
         /// The {Feature} placeholder must be the same name as the <see cref="FeatureFolderOptions"/> FeatureNamePlaceholder to replace
         /// the placeholder with the path to the feature folder.

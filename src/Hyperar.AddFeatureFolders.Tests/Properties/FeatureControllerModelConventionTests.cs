@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using Xunit;
-using System.Reflection;
-using Controllers;
-using Project.Name.Features;
-using Project.Name.Features.Admin.ManageGolfers;
-using Project.Name.Features.Foo.Bar.Baz;
-using static Xunit.Assert;
-
-namespace OdeToCode.AddFeatureFolders.Tests
+﻿namespace Hyperar.AddFeatureFolders.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using Controllers;
+    using Microsoft.AspNetCore.Mvc.ApplicationModels;
+    using Project.Name.Features;
+    using Project.Name.Features.Admin.ManageGolfers;
+    using Project.Name.Features.Foo.Bar.Baz;
+    using Xunit;
+
     public class FeatureControllerModelConventionTests
     {
         [Theory]
@@ -28,7 +27,7 @@ namespace OdeToCode.AddFeatureFolders.Tests
 
             service.Apply(model);
 
-            Equal(expected, model.Properties["feature"]);
+            Assert.Equal(expected, model.Properties["feature"]);
         }
 
         [Fact]
@@ -45,7 +44,7 @@ namespace OdeToCode.AddFeatureFolders.Tests
 
             service.Apply(model);
 
-            Equal(@"Features\Foo", model.Properties["feature"]);
+            Assert.Equal(@"Features\Foo", model.Properties["feature"]);
         }
     }
 }
@@ -67,7 +66,7 @@ namespace Project.Name.Features.Foo.Bar.Baz
 namespace Project.Name.Features
 {
     internal class HomeController
-    {       
+    {
     }
 }
 
@@ -75,6 +74,5 @@ namespace Controllers
 {
     internal class AboutController
     {
-        
     }
 }

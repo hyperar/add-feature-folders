@@ -1,10 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
-
-namespace OdeToCode.AddFeatureFolders
+﻿namespace Hyperar.AddFeatureFolders
 {
+    using System;
+    using System.IO;
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc.ApplicationModels;
+
     public class FeatureControllerModelConvention : IControllerModelConvention
     {
         private readonly string _folderName;
@@ -12,8 +12,7 @@ namespace OdeToCode.AddFeatureFolders
 
         public FeatureControllerModelConvention(FeatureFolderOptions options)
         {
-            if(options == null)
-                throw new ArgumentNullException(nameof(options));
+            ArgumentNullException.ThrowIfNull(options, nameof(options));
 
             _folderName = options.FeatureFolderName;
             _nameDerivationStrategy = options.DeriveFeatureFolderName ?? DeriveFeatureFolderName;
@@ -21,10 +20,10 @@ namespace OdeToCode.AddFeatureFolders
 
         public void Apply(ControllerModel model)
         {
-            if(model == null)
-                throw new ArgumentNullException(nameof(model));
+            ArgumentNullException.ThrowIfNull(model, nameof(model));
 
             var featureName = _nameDerivationStrategy(model);
+
             model.Properties.Add("feature", featureName);
         }
 

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+        <AssemblyName>Hyperar.AddFeatureFolders.Tests</AssemblyName>
+        <PackageId>Hyperar.AddFeatureFolders.Tests</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+        <PackageReference Include="MSTest.TestAdapter" Version="3.5.1" />
+        <PackageReference Include="MSTest.TestFramework" Version="3.5.1" />
+        <PackageReference Include="xunit" Version="2.9.0" />
+        <PackageReference Include="xunit.extensibility.core" Version="2.9.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

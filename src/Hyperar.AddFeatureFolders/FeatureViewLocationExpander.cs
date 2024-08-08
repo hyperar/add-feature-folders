@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Mvc.Razor;
-
-namespace OdeToCode.AddFeatureFolders
+﻿namespace Hyperar.AddFeatureFolders
 {
+    using System;
+    using System.Collections.Generic;
+    using Microsoft.AspNetCore.Mvc.Controllers;
+    using Microsoft.AspNetCore.Mvc.Razor;
+
     public class FeatureViewLocationExpander : IViewLocationExpander
     {
         private readonly string _placeholder;
@@ -22,11 +22,9 @@ namespace OdeToCode.AddFeatureFolders
 
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
-            if(context == null)
-                throw new ArgumentNullException(nameof(context));
+            ArgumentNullException.ThrowIfNull(context, nameof(context));
 
-            if(viewLocations == null)
-                throw new ArgumentNullException(nameof(viewLocations));
+            ArgumentNullException.ThrowIfNull(viewLocations, nameof(viewLocations));
 
             var controllerDescriptor = context.ActionContext.ActionDescriptor as ControllerActionDescriptor;
             var featureName = controllerDescriptor?.Properties["feature"] as string;

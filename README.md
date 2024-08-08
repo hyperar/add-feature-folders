@@ -1,5 +1,6 @@
 # AddFeatureFolders
-[![Build status](https://ci.appveyor.com/api/projects/status/k4aotmbkugavs2mq?svg=true)](https://ci.appveyor.com/project/OdeToCode/addfeaturefolders)
+[![Build status](https://ci.appveyor.com/api/projects/status/2toysc4g61hdgxyj?svg=true)](https://ci.appveyor.com/project/hyperar/add-feature-folders)
+
 ### Installation
 ```
     Install-Package OdeToCode.AddFeatureFolders 
@@ -44,8 +45,8 @@ AddFeatureFolders **uses the namespace of the controller to figure out where the
 For example: 
 ```
 /Features
-	/Robots
-		/Robots.cshtml
+    /Robots
+        /Robots.cshtml
 ```
 The above example folder structure relies on the namespace of the controller being `<whatever>.Features.Robots`. 
 

@@ -1,10 +1,7 @@
-﻿using System;
-using OdeToCode.AddFeatureFolders;
-
-// ReSharper disable once CheckNamespace
-
-namespace Microsoft.Extensions.DependencyInjection
+﻿namespace Microsoft.Extensions.DependencyInjection
 {
+    using System;
+    using Hyperar.AddFeatureFolders;
     public static class ServiceCollectionExtensions
     {
         /// <summary>
@@ -12,11 +9,9 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         public static IMvcBuilder AddFeatureFolders(this IMvcBuilder services, FeatureFolderOptions options)
         {
-            if (services == null)
-                throw new ArgumentNullException(nameof(services));
+            ArgumentNullException.ThrowIfNull(services, nameof(services));
 
-            if (options == null)
-                throw new ArgumentException(nameof(options));
+            ArgumentNullException.ThrowIfNull(options, nameof(options));
 
             var expander = new FeatureViewLocationExpander(options);
 
@@ -64,7 +59,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <summary>
         ///     Use areas with feature folders with the default options. Controllers and views will
         ///     be located under a folder named Areas with an area specific folder. Shared views are
-        ///     located in Areas\Shared and then in Features\Shared 
+        ///     located in Areas\Shared and then in Features\Shared
         /// </summary>
         public static IMvcBuilder AddAreaFeatureFolders(this IMvcBuilder services)
         {

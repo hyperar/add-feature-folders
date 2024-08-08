@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
+    </PropertyGroup>
+    <ItemGroup>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Update="Areas\_ViewImports.cshtml">
+            <Pack>$(IncludeRazorContentInPack)</Pack>
+        </Content>
+    </ItemGroup>
+</Project>

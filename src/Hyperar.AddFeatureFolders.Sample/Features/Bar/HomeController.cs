@@ -14,11 +14,11 @@ namespace WebApplication.Features.Bar
         public IActionResult Search()
         {
             // do some stuff...
-            return View("Home");            
+            return View("Home");
             // this will also work
             // return Redirect("/Bar/Home");
 
-            // TODO: posting to /Foo/Home or /Bar/Home with Content-Type: application/x-www-form-urlencoded always routes to the "Bar" feature controller            
+            // TODO: posting to /Foo/Home or /Bar/Home with Content-Type: application/x-www-form-urlencoded always routes to the "Bar" feature controller
             // return RedirectToAction("Home");
         }
     }

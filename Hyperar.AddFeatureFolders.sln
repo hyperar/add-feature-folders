@@ -1,0 +1,50 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6C8D0F52-A4B8-43C2-8086-2C1591DF47DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B55FC53B-F6B3-4504-B27F-3AFB6F77A4ED}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperar.AddFeatureFolders", "src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj", "{D4732E00-29ED-472E-BE60-6573A4318E63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperar.AddFeatureFolders.Sample", "src\Hyperar.AddFeatureFolders.Sample\Hyperar.AddFeatureFolders.Sample.csproj", "{06704918-D1F8-485C-853D-8251686D0AA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperar.AddFeatureFolders.Tests", "src\Hyperar.AddFeatureFolders.Tests\Hyperar.AddFeatureFolders.Tests.csproj", "{A5C6A535-F778-4BC6-9983-125AADF84D76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4732E00-29ED-472E-BE60-6573A4318E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4732E00-29ED-472E-BE60-6573A4318E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4732E00-29ED-472E-BE60-6573A4318E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4732E00-29ED-472E-BE60-6573A4318E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06704918-D1F8-485C-853D-8251686D0AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06704918-D1F8-485C-853D-8251686D0AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06704918-D1F8-485C-853D-8251686D0AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06704918-D1F8-485C-853D-8251686D0AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C6A535-F778-4BC6-9983-125AADF84D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C6A535-F778-4BC6-9983-125AADF84D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C6A535-F778-4BC6-9983-125AADF84D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C6A535-F778-4BC6-9983-125AADF84D76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4732E00-29ED-472E-BE60-6573A4318E63} = {6C8D0F52-A4B8-43C2-8086-2C1591DF47DA}
+		{06704918-D1F8-485C-853D-8251686D0AA4} = {6C8D0F52-A4B8-43C2-8086-2C1591DF47DA}
+		{A5C6A535-F778-4BC6-9983-125AADF84D76} = {6C8D0F52-A4B8-43C2-8086-2C1591DF47DA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1F3697A-5E7E-4032-9896-8D16E77B9E08}
+	EndGlobalSection
+EndGlobal
