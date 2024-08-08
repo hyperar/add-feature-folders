@@ -10,13 +10,10 @@ function Exec
     }
 }
 
+Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:temp\dotnet-install.ps1"
+& $env:temp\dotnet-install.ps1 -Architecture x64 -Version '6.0' -InstallDir "$env:ProgramFiles\dotnet"
+
 if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
-
-dotnet tool install -g InheritDocTool
-
-Invoke-WebRequest 'https://dot.net/v1/dotnet-install.ps1' -OutFile dotnet-install.ps1
-
-./dotnet-install.ps1 -Channel 6.0
 
 exec { & dotnet restore }
 
