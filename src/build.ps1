@@ -12,11 +12,11 @@ function Exec
 
 if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
 
-exec { dotnet tool install -g InheritDocTool }
+dotnet tool install -g InheritDocTool
 
-exec { Invoke-WebRequest 'https://dot.net/v1/dotnet-install.ps1' -OutFile dotnet-install.ps1 }
+Invoke-WebRequest 'https://dot.net/v1/dotnet-install.ps1' -OutFile dotnet-install.ps1
 
-exec { ./dotnet-install.ps1 -Channel 6.0 }
+./dotnet-install.ps1 -Channel 6.0
 
 exec { & dotnet restore }
 
