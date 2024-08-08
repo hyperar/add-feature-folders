@@ -15,8 +15,9 @@ install:
 
 dotnet_csproj:
   patch: true
-  file: '.\src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj'
+  file: 'src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj'
   version: '{version}'
+  version_prefix: '{version}'
   package_version: '{version}'
   assembly_version: '{version}'
   file_version: '{version}'
