@@ -31,8 +31,10 @@ before_build:
         Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:temp\dotnet-install.ps1"
         & $env:temp\dotnet-install.ps1 -Architecture x64 -Version 6.0.132 -InstallDir "$env:ProgramFiles\dotnet"
     }
+
+
+    dotnet restore
 build:
-  project: src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj
   publish_nuget: true
   publish_nuget_symbols: true
   use_snupkg_format: true
