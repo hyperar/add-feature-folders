@@ -1,41 +1,49 @@
 version: 1.0.{build}
-
-skip_non_tags: false
-
-install:
-- ps: |
-    if (Test-Path "$env:ProgramFiles\dotnet\sdk\6.0.132") {
-        Write-Host ".NET Core SDK 6.0.132 is already installed" -ForegroundColor Yellow
-    }
-    else {
-        Write-Host "Installing .NET Core SDK 6.0.132"
-        Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:temp\dotnet-install.ps1"
-        & $env:temp\dotnet-install.ps1 -Architecture x64 -Version 6.0.132 -InstallDir "$env:ProgramFiles\dotnet"
-    }
-
+branches:
+  only:
+  - master
+image: Visual Studio 2022
+configuration: Release
+platform: Any CPU
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
 dotnet_csproj:
   patch: true
-  file: 'src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj'
+  file: '**\*.csproj'
   version: '{version}'
   version_prefix: '{version}'
   package_version: '{version}'
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+before_build:
+- ps: >-
+    if (Test-Path "$env:ProgramFiles\dotnet\sdk\6.0.132") {
+        Write-Host ".NET Core SDK 6.0.132 is already installed" -ForegroundColor Yellow
+    }
 
-test: false
-
-branches:
-  only: 
-  - master
-
-artifacts:
-- path: '**\*.nupkg'
-  name: NuGet
-
+    else {
+        Write-Host "Installing .NET Core SDK 6.0.132"
+        Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:temp\dotnet-install.ps1"
+        & $env:temp\dotnet-install.ps1 -Architecture x64 -Version 6.0.132 -InstallDir "$env:ProgramFiles\dotnet"
+    }
+build:
+  project: src\Hyperar.AddFeatureFolders\Hyperar.AddFeatureFolders.csproj
+  publish_nuget: true
+  publish_nuget_symbols: true
+  use_snupkg_format: true
+  verbosity: detailed
 deploy:
 - provider: NuGet
+  server: https://www.nuget.org/packages/Hyperar.AddFeatureFolders/
   api_key:
     secure: VFY/shzz3MLUjgflxMIW6ewr1dXzfQqpMNuX0gv0YlMvJ7f1Pp7L/5/Lb4hf89lw
-  skip_symbols: false
-  artifact: /.*(\.|\.s)nupkg/
+  username:
+    secure: 2/eIlgBkedapy+Jt4YKUUQ==
+  skip_symbols: true
+  on:
+    branch: master
