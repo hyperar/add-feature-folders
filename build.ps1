@@ -20,4 +20,4 @@ pushd .\src\Hyperar.AddFeatureFolders.Tests\
 exec { & dotnet test -c Release }
 popd
 
-exec { & dotnet pack .\src\Hyperar.AddFeatureFolders -c Release -o .\artifacts }
+exec { & dotnet pack .\src\Hyperar.AddFeatureFolders -c Release -o .\artifacts /p:Version=%APPVEYOR_BUILD_VERSION% }
