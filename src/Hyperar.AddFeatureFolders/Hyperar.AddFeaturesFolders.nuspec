@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <version>$version$</version>
+    <id>Hyperar.AddFeaturesFolders</id>
+    <authors>Hyperar</authors>
+    <owners>Hyperar</owners>
+    <projectUrl>https://github.com/hyperar/add-feature-folders/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Use feature folders to organize controllers and views in ASP.NET Core.</description>
+    <tags>feature folders;asp.net core</tags>
+  </metadata>
+</package>
